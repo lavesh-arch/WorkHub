@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 
+from workhub.api.routes.auth import router as auth_router
 from workhub.api.routes.users import router as user_router
 
 
@@ -8,8 +9,8 @@ app = FastAPI(
     version="1.0.0",
 )
 
-
 app.include_router(user_router)
+app.include_router(auth_router)
 
 
 @app.get("/")

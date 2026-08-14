@@ -13,7 +13,7 @@ from workhub.schemas.user import (
     UserProfileUpdate,
     UserUpdate,
 )
-
+from workhub.core.security import hash_password
 
 class UserService:
 
@@ -40,7 +40,7 @@ class UserService:
         user = User(
             email=data.email,
             full_name=data.full_name,
-            password_hash=self._hash_password(data.password),
+            password_hash=hash_password(data.password),
             role=data.role,
         )
 
