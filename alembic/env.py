@@ -12,6 +12,7 @@ from sqlmodel import SQLModel
 
 from workhub.models.user import User
 from workhub.models.user_profile import UserProfile
+from workhub.models.refresh_token import RefreshToken
 
 
 # Alembic Config object
